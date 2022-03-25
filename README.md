@@ -69,13 +69,6 @@ If you want to make prediction for a image,follow the below metioned steps
    ```
    python Predict.py --type image
    ```
-  
-   
-### Possible Errors
-1. Try running the above commands in Anaconda Prompt instead of shell
-2. Make sure the video/image is put in the 'video' or 'img' folder and this name of the testing video file is entered exactly when predict.py is run and "Enter the filename" prompt is asked
-3. Make sure the environment is activated and the packages mentioned above are installed in it
-4. If it doesn't run properly in GPU, make use of CPU
    
 ### Train
 
@@ -97,6 +90,46 @@ To train our age-gender prediction and the body detection, run the `Train.py` fi
 ```
 python Train.py
 ```
+
+### Possible Errors
+1. Try running the above commands in Anaconda Prompt instead of shell
+2. Make sure the video/image is put in the 'video' or 'img' folder and this name of the testing video file is entered exactly when predict.py is run and "Enter the filename" prompt is asked
+3. Make sure the environment is activated and the packages mentioned above are installed in it
+4. If doesn't run in the GPU, try with CPU!
+
+NOTE: If the predict.py or train.py doesn't work, follow the instructions to run it on Google Colab
+
+## Using Google Colab
+## Instructions
+
+Upload the repository folder `Age and Gender Prediction` containing the code on GDrive 
+
+### Train
+[![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ShVtkHfyiKB_ogBFjqAQ-8IQABcGQC5a?usp=sharing)
+
+To train the age-gender prediction and the body detection, run the `Train.ipynb` notebook.
+Create a `data` directory in the main folder and place the PETA datset according to the given format: 
+```
+Age and Gender Prediction/
+    data/
+        PETA/
+            images/[00001.png...19000.png]
+            dataset.pkl
+```
+`images` folder can be found in:  [PETA Google Drive](https://drive.google.com/open?id=1q4cux17K3zNBgIrDV4FtcHJPLzXNKfYG).
+`dataset.pkl` can be found in: ([dataset.pkl](https://drive.google.com/open?id=1q4cux17K3zNBgIrDV4FtcHJPLzXNKfYG).)
+
+### Prediction
+[![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/18XrC1buyXGjnzZywPAUmiqLTnbex9QTk?usp=sharing)
+
+To get the prediction for any video or image, simply run the `Predict.ipynb` file and follow the instructions mentioned in it. It is recommended to use GPU for faster prediction.
+
+1. Place the video to be predicted in the `./video/` folder
+2. Run the 'Predict for Video' subsection in the `Predict.ipynb` Notebook and all the preceding cells
+3. The prediction will be stored in the `./prediction/{Video Name}`. It contains
+    - Outputted video with bounding boxes
+    - `images` folder containing the frame by frame ID and bounding box
+    - `predictions.csv` the csv file in the desired format
 
 ## References and Description
 
